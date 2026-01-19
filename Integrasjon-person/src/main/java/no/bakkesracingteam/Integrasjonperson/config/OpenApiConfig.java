@@ -45,39 +45,8 @@ public class OpenApiConfig {
      */
     private Info apiInfo() {
         return new Info()
-                .title("🏁 Integrasjon Person API")
-                .description("""
-                        ## Verdens Beste Person Integration API
-                        
-                        Dette API-et tilbyr omfattende funksjonalitet for personhåndtering med fokus på:
-                        
-                        ### ✨ Hovedfunksjoner
-                        - 🔍 **Personsøk**: Avansert søk i personregister
-                        - 📊 **Data Integration**: Seamless integrasjon med backend-systemer
-                        - 🚀 **High Performance**: Bygget med Java 25 og Spring Boot 4.0.0
-                        - 🔒 **Type Safety**: Records og moderne Java features
-                        
-                        ### 🛠️ Teknisk Stack
-                        - **Java**: 25 (Latest LTS features)
-                        - **Spring Boot**: 4.0.0
-                        - **OpenAPI**: 3.0 (Latest specification)
-                        - **Architecture**: RESTful, Layered Architecture
-                        
-                        ### 📖 Hvordan Bruke API-et
-                        1. Utforsk tilgjengelige endpoints nedenfor
-                        2. Bruk "Try it out" for å teste direkte i browseren
-                        3. Se response schemas og eksempler
-                        4. Implementer i din applikasjon
-                        
-                        ### 🎯 Best Practices
-                        - Alle endepunkter returnerer JSON
-                        - HTTP statuskoder følger REST-standarder
-                        - Comprehensive error handling
-                        - Norwegian characters (æ, ø, å) støttes fullt ut
-                        
-                        ### 📞 Support
-                        For spørsmål eller problemer, kontakt utviklingsteamet via informasjonen nedenfor.
-                        """)
+                .title("Integrasjon Person API")
+                .description("API for henting av personinformasjon fra personregisteret.")
                 .version("1.0.0")
                 .contact(apiContact())
                 .license(apiLicense());
@@ -108,15 +77,15 @@ public class OpenApiConfig {
     private List<Server> apiServers() {
         Server localServer = new Server()
                 .url("http://localhost:8080")
-                .description("🖥️ Local Development Server");
+                .description("Lokal utviklingsserver");
 
         Server testServer = new Server()
                 .url("https://test.bakkesracingteam.no")
-                .description("🧪 Test Environment");
+                .description("Testmiljo");
 
         Server prodServer = new Server()
                 .url("https://api.bakkesracingteam.no")
-                .description("🚀 Production Server");
+                .description("Produksjon");
 
         return List.of(localServer, testServer, prodServer);
     }
@@ -126,26 +95,12 @@ public class OpenApiConfig {
      */
     private List<Tag> apiTags() {
         Tag personTag = new Tag()
-                .name("👥 Person Management")
-                .description("""
-                        Endpoints for managing and retrieving person information.
-                        
-                        **Features:**
-                        - Retrieve person details
-                        - Search by various criteria
-                        - Norwegian SSN support
-                        """);
+                .name("Person")
+                .description("Endpoints for henting av personinformasjon");
 
         Tag healthTag = new Tag()
-                .name("🏥 Health & Monitoring")
-                .description("""
-                        System health and monitoring endpoints.
-                        
-                        **Includes:**
-                        - Application health status
-                        - Metrics and statistics
-                        - System information
-                        """);
+                .name("Health")
+                .description("Helsesjekk og overvaking");
 
         return List.of(personTag, healthTag);
     }
@@ -155,7 +110,7 @@ public class OpenApiConfig {
      */
     private ExternalDocumentation externalDocumentation() {
         return new ExternalDocumentation()
-                .description("📚 Full API Documentation & User Guide")
+                .description("API-dokumentasjon")
                 .url("https://docs.bakkesracingteam.no/api");
     }
 }

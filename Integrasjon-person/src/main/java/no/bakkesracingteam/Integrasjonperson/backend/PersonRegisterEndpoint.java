@@ -59,90 +59,15 @@ public class PersonRegisterEndpoint {
      * @param ssn Norwegian Social Security Number (fødselsnummer) - 11 digits
      * @param customerName Full customer name with support for Norwegian characters
      */
-    @Schema(
-        name = "Customer",
-        description = """
-            ## Customer Data Model (Backend)
-            
-            Representerer en kunde fra backend-systemet.
-            
-            ### Felter:
-            - **ssn**: Social Security Number (11 siffer)
-            - **customerName**: Kundens fulle navn
-            
-            ### Bruk:
-            Dette er den interne representasjonen som konverteres til Person
-            for API-responser.
-            
-            ### Eksempel:
-            ```json
-            {
-              "ssn": "11105645332",
-              "customerName": "Bjørn Best"
-            }
-            ```
-            """,
-        example = """
-            {
-              "ssn": "11105645332",
-              "customerName": "Bjørn Best"
-            }
-            """
-    )
+    @Schema(name = "Customer", description = "Kundedata fra backend")
     public record Customer(
 
-        @Schema(
-            description = """
-                **Social Security Number (SSN)**
-                
-                11-digit Norwegian social security number.
-                
-                ### Format:
-                - Exactly 11 numeric digits
-                - String type to preserve leading zeros
-                
-                ### Example:
-                - "11105645332"
-                
-                ### Validation:
-                - Must be 11 characters
-                - Only numeric characters allowed
-                """,
-            example = "11105645332",
-            requiredMode = Schema.RequiredMode.REQUIRED,
-            pattern = "\\d{11}",
-            minLength = 11,
-            maxLength = 11
-        )
+        @Schema(description = "Fodselsnummer (11 siffer)", example = "11105645332")
         @NotBlank(message = "SSN cannot be blank")
         @Pattern(regexp = "\\d{11}", message = "SSN must be exactly 11 digits")
         String ssn,
 
-        @Schema(
-            description = """
-                **Customer Full Name**
-                
-                Complete name of the customer.
-                
-                ### Characteristics:
-                - Supports Norwegian characters (æ, ø, å)
-                - Supports international characters and special symbols
-                - Typically includes first and last name
-                
-                ### Examples:
-                - "Bjørn Best"
-                - "Ole i Dole"
-                - "Åse Øyvind Ærlig"
-                
-                ### Validation:
-                - Minimum 2 characters
-                - Maximum 200 characters
-                """,
-            example = "Bjørn Best",
-            requiredMode = Schema.RequiredMode.REQUIRED,
-            minLength = 2,
-            maxLength = 200
-        )
+        @Schema(description = "Kundens navn", example = "Ola Nordmann")
         @NotBlank(message = "Customer name cannot be blank")
         String customerName
     ) {
