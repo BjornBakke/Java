@@ -1,8 +1,8 @@
-# 📚 OpenAPI Dokumentasjon Guide
+# OpenAPI Dokumentasjonsguide
 
-## 🎉 Verdens Beste OpenAPI Dokumentasjon!
+## Omfattende OpenAPI Dokumentasjon
 
-Dette prosjektet har nå **verdens mest omfattende OpenAPI 3.0 dokumentasjon** med:
+Dette prosjektet har omfattende OpenAPI 3.0 dokumentasjon med:
 
 - ✅ Fullstendig annotert REST API
 - ✅ Detaljerte eksempler for alle endepunkter
@@ -40,14 +40,14 @@ Når applikasjonen er startet, åpne en av disse URLene i nettleseren:
 
 ### 🎯 OpenAPI Features
 
-#### 1. **Comprehensive API Information**
+#### 1. **Omfattende API-informasjon**
 - **Title**: 🏁 Integrasjon Person API
 - **Version**: 1.0.0
 - **Description**: Detaljert beskrivelse med norsk og engelsk tekst
 - **Contact**: Bakkes Racing Team (support@bakkesracingteam.no)
 - **License**: Apache 2.0
 
-#### 2. **Multiple Environments**
+#### 2. **Flere miljøer**
 ```yaml
 servers:
   - url: http://localhost:8080
@@ -58,11 +58,11 @@ servers:
     description: 🚀 Production Server
 ```
 
-#### 3. **Organized Tags**
+#### 3. **Organiserte tagger**
 - 👥 **Person Management**: Alle person-relaterte endpoints
 - 🏥 **Health & Monitoring**: System health og metrics
 
-#### 4. **Detailed Endpoint Documentation**
+#### 4. **Detaljert endepunktdokumentasjon**
 
 ##### GET /api - Hent alle personer
 - **Summary**: 🔍 Hent alle personer
@@ -79,7 +79,7 @@ servers:
 - `200`: Vellykket forespørsel
 - `500`: Intern serverfeil
 
-#### 5. **Schema Definitions**
+#### 5. **Skjemadefinisjoner**
 
 ##### Person Record
 ```json
@@ -89,7 +89,7 @@ servers:
 }
 ```
 
-**Fields:**
+**Felter:**
 - **fnr** (string, required):
   - Pattern: `\d{11}`
   - Length: 11 characters
@@ -114,7 +114,7 @@ servers:
 
 ## 🎨 Swagger UI Features
 
-### Aktiverte Features
+### Aktiverte funksjoner
 
 ```properties
 # Sortering
@@ -220,47 +220,46 @@ src/main/java/no/bakkesracingteam/Integrasjonperson/
     └── PersonRegisterEndpoint.java  # 🗄️ Backend Service med @Schema
 ```
 
-### Annotations Brukt
+### Annotasjoner brukt
 
-| Annotation | Plassering | Formål |
+| Annotasjon | Plassering | Formål |
 |------------|------------|--------|
-| `@Tag` | Controller | Grupperer endpoints |
-| `@Operation` | Endpoint metoder | Beskriver operasjoner |
-| `@ApiResponses` | Endpoint metoder | Definerer mulige responses |
-| `@ApiResponse` | Response items | Detaljert response info |
-| `@Schema` | Records/Models | Schema definisjon |
-| `@NotBlank` | Record fields | Validering |
-| `@Pattern` | Record fields | Regex validering |
+| `@Tag` | Controller | Grupperer endepunkter |
+| `@Operation` | Endepunktmetoder | Beskriver operasjoner |
+| `@ApiResponses` | Endepunktmetoder | Definerer mulige responser |
+| `@ApiResponse` | Responselementer | Detaljert responsinfo |
+| `@Schema` | Records/Modeller | Skjemadefinisjon |
+| `@NotBlank` | Record-felter | Validering |
+| `@Pattern` | Record-felter | Regex-validering |
 
 ---
 
-## 🎯 Best Practices Implementert
+## Beste praksis implementert
 
-### ✅ Dokumentasjon
+### Dokumentasjon
 - Detaljerte beskrivelser på norsk og engelsk
 - Brukseksempler for alle endpoints
 - Multiple response eksempler
-- Error scenarios dokumentert
-- GDPR notes for sensitive data
+- Feilscenarioer dokumentert
+- GDPR-notater for sensitive data
 
-### ✅ Schema Validering
-- Jakarta Validation annotations
-- Pattern matching for SSN
-- Length constraints
-- Required fields markert
+### Skjemavalidering
+- Jakarta Validation-annotasjoner
+- Mønstermatching for fødselsnummer
+- Lengdebegrensninger
+- Obligatoriske felter markert
 
-### ✅ User Experience
-- Emoji-basert navigasjon (👥, 🔍, ✅, ❌)
+### Brukeropplevelse
 - Norske tekster for lokal kontekst
 - "Try it out" aktivert for testing
-- Syntax highlighting
-- Response time display
+- Syntaksutheving
+- Visningstid for respons
 
-### ✅ Standards Compliance
-- OpenAPI 3.0 specification
-- RESTful design principles
-- HTTP status codes korrekt brukt
-- Content-Type headers riktig satt
+### Standardoverholdelse
+- OpenAPI 3.0-spesifikasjon
+- RESTful designprinsipper
+- HTTP-statuskoder korrekt brukt
+- Content-Type-headere riktig satt
 
 ---
 
@@ -276,13 +275,13 @@ npm install -g @apidevtools/swagger-cli
 swagger-cli validate http://localhost:8080/api-docs
 ```
 
-### Coverage Sjekk
+### Dekningssjekk
 
-✅ **Alle endpoints dokumentert**: 100%  
-✅ **Alle schemas dokumentert**: 100%  
-✅ **Response examples**: 100%  
-✅ **Error scenarios**: 100%  
-✅ **Validation rules**: 100%  
+**Alle endepunkter dokumentert**: 100%
+**Alle skjemaer dokumentert**: 100%
+**Responseksempler**: 100%
+**Feilscenarioer**: 100%
+**Valideringsregler**: 100%  
 
 ---
 
@@ -301,73 +300,73 @@ swagger-cli validate http://localhost:8080/api-docs
 
 ---
 
-## 🌟 Unique Features
+## Unike funksjoner
 
-### 1. **Dual Language Support**
+### 1. **Tospråklig støtte**
 - Norsk for lokal kontekst
 - Engelsk for internasjonal bruk
 
-### 2. **Norwegian Character Support**
+### 2. **Støtte for norske tegn**
 - Full støtte for æ, ø, å
 - Eksempler med norske navn
-- UTF-8 encoding garantert
+- UTF-8-koding garantert
 
-### 3. **Production Ready**
-- Multiple server environments
-- Health monitoring endpoints
-- Actuator integration
-- Error scenarios covered
+### 3. **Produksjonsklar**
+- Flere servermiljøer
+- Helseovervåkingsendepunkter
+- Actuator-integrasjon
+- Feilscenarioer dekket
 
-### 4. **Developer Friendly**
-- Interactive testing i Swagger UI
-- Copy-paste ready curl commands
-- Client generation support
-- Clear examples
+### 4. **Utviklervennlig**
+- Interaktiv testing i Swagger UI
+- Kopier-og-lim-inn-klare curl-kommandoer
+- Støtte for klientgenerering
+- Tydelige eksempler
 
 ---
 
-## 🎓 Læringsressurser
+## Læringsressurser
 
-### OpenAPI / Swagger
+### OpenAPI/Swagger
 - [OpenAPI Specification](https://spec.openapis.org/oas/v3.0.0)
 - [Swagger Editor](https://editor.swagger.io/)
 - [SpringDoc Documentation](https://springdoc.org/)
 
-### Java & Spring Boot
+### Java og Spring Boot
 - [Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 - [Jakarta Validation](https://beanvalidation.org/2.0/)
 - [Java Records Guide](https://docs.oracle.com/en/java/javase/25/language/records.html)
 
 ---
 
-## 🚀 Neste Steg
+## Neste steg
 
-### Anbefalt Forbedringer
+### Anbefalte forbedringer
 
 1. **Autentisering**
-   - Legg til OAuth2/JWT dokumentasjon
-   - Security schemes i OpenAPI
+   - Legg til OAuth2/JWT-dokumentasjon
+   - Sikkerhetsordninger i OpenAPI
 
-2. **Flere Endpoints**
+2. **Flere endepunkter**
    - POST /api (Opprett person)
    - PUT /api/{id} (Oppdater person)
    - DELETE /api/{id} (Slett person)
 
-3. **Pagination**
-   - Dokumenter pagination parameters
-   - Add page size limits
+3. **Paginering**
+   - Dokumenter pagineringsparametere
+   - Legg til sidestørrelsesbegrensninger
 
-4. **Rate Limiting**
-   - Dokumenter rate limits
-   - Add headers for rate limit info
+4. **Hastighetsbegrensning**
+   - Dokumenter hastighetsbegrensninger
+   - Legg til headere for hastighetsbegrensningsinfo
 
-5. **Versioning**
-   - API versioning strategy
-   - Backwards compatibility
+5. **Versjonering**
+   - API-versjoneringsstrategi
+   - Bakoverkompatibilitet
 
 ---
 
-## 📞 Support
+## Støtte
 
 ### Kontakt
 - **Team**: Bakkes Racing Team
@@ -376,29 +375,27 @@ swagger-cli validate http://localhost:8080/api-docs
 
 ### Ressurser
 - **Swagger UI**: http://localhost:8080/swagger-ui.html
-- **API Docs**: http://localhost:8080/api-docs
-- **Health**: http://localhost:8080/actuator/health
+- **API-dokumenter**: http://localhost:8080/api-docs
+- **Helsestatus**: http://localhost:8080/actuator/health
 
 ---
 
-## 🎉 Konklusjon
+## Konklusjon
 
-Du har nå **verdens beste OpenAPI dokumentasjon** for dette prosjektet!
+Du har nå omfattende OpenAPI-dokumentasjon for dette prosjektet.
 
-### Achievements Unlocked:
-- ✅ OpenAPI 3.0 compliance
-- ✅ Interactive Swagger UI
-- ✅ Comprehensive examples
-- ✅ Dual language support
-- ✅ Norwegian character support
-- ✅ Schema validation
-- ✅ Production ready configuration
-- ✅ Developer friendly UX
-
-**Nyt din fantastiske API dokumentasjon!** 🎊
+### Oppnåelser:
+- OpenAPI 3.0-overholdelse
+- Interaktiv Swagger UI
+- Omfattende eksempler
+- Tospråklig støtte
+- Støtte for norske tegn
+- Skjemavalidering
+- Produksjonsklar konfigurasjon
+- Utviklervennlig UX
 
 ---
 
-*Sist oppdatert: 15. november 2025*  
-*Java 25 • Spring Boot 3.5.6 • OpenAPI 3.0 • Springdoc 2.7.0*
+*Sist oppdatert: 15. november 2025*
+*Java 25 - Spring Boot 3.5.6 - OpenAPI 3.0 - Springdoc 2.7.0*
 

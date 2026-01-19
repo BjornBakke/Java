@@ -1,9 +1,9 @@
 # Integrasjon-person - Java 25 Oppgradering
 
 ## Oversikt
-Dette prosjektet er oppgradert til Java 25 og inkluderer nå omfattende unit tester og **verdens beste OpenAPI 3.0 dokumentasjon**.
+Dette prosjektet er oppgradert til Java 25 og inkluderer omfattende enhetstester og OpenAPI 3.0-dokumentasjon.
 
-## 🚀 Kom i Gang
+## Kom i gang
 
 ### Start Applikasjonen
 ```bash
@@ -14,18 +14,18 @@ Dette prosjektet er oppgradert til Java 25 og inkluderer nå omfattende unit tes
 mvn spring-boot:run
 ```
 
-### Tilgang til API Dokumentasjon
+### Tilgang til API-dokumentasjon
 Når applikasjonen kjører, åpne:
 
 - **Swagger UI**: http://localhost:8080/swagger-ui.html
 - **OpenAPI JSON**: http://localhost:8080/api-docs
 - **OpenAPI YAML**: http://localhost:8080/api-docs.yaml
-- **Health Check**: http://localhost:8080/actuator/health
+- **Helsestatus**: http://localhost:8080/actuator/health
 
-## 📚 Dokumentasjon
+## Dokumentasjon
 
-- **[OPENAPI_GUIDE.md](OPENAPI_GUIDE.md)** - Komplett guide til OpenAPI dokumentasjonen
-- **[TEST_COVERAGE.md](TEST_COVERAGE.md)** - Test coverage rapport
+- **[OPENAPI_GUIDE.md](OPENAPI_GUIDE.md)** - Komplett guide til OpenAPI-dokumentasjonen
+- **[TEST_COVERAGE.md](TEST_COVERAGE.md)** - Testdekningsrapport
 - **[CHANGES.md](CHANGES.md)** - Detaljert endringsoversikt
 - **[OPPSUMMERING.md](OPPSUMMERING.md)** - Prosjektoppsummering
 
@@ -37,33 +37,32 @@ Når applikasjonen kjører, åpne:
 - **Test-klasser**: Bruker moderne Java 25 features som `.getFirst()` og `.getLast()` metoder
 - **IntegrasjonPersonApplication**: Fjernet redundant `public` modifier fra main (Java 25 feature)
 
-### 2. OpenAPI 3.0 Dokumentasjon ✨ NYE!
-- **OpenApiConfig.java**: Omfattende OpenAPI konfigurasjon
-  - Multiple server environments (local, test, prod)
-  - Detaljert API information med dual language support
-  - Custom tags og external documentation
-  - Contact og license informasjon
+### 2. OpenAPI 3.0-dokumentasjon (ny)
+- **OpenApiConfig.java**: Omfattende OpenAPI-konfigurasjon
+  - Flere servermiljøer (lokal, test, prod)
+  - Detaljert API-informasjon med tospråklig støtte
+  - Egendefinerte tagger og ekstern dokumentasjon
+  - Kontakt- og lisensinformasjon
   
-- **PersonResource.java**: Full OpenAPI annotations
+- **PersonResource.java**: Fullstendige OpenAPI-annotasjoner
   - @Tag for gruppering
   - @Operation med detaljerte beskrivelser
-  - @ApiResponses med multiple eksempler
-  - @Schema på Person record med validering
+  - @ApiResponses med flere eksempler
+  - @Schema på Person-record med validering
   - Norske og engelske beskrivelser
-  - Emoji-basert navigasjon
   
-- **PersonRegisterEndpoint.java**: Backend dokumentasjon
-  - @Schema på Customer record
-  - Jakarta Validation annotations
-  - Comprehensive JavaDoc
+- **PersonRegisterEndpoint.java**: Backend-dokumentasjon
+  - @Schema på Customer-record
+  - Jakarta Validation-annotasjoner
+  - Omfattende JavaDoc
   
-- **application.properties**: Omfattende Swagger UI konfigurasjon
+- **application.properties**: Omfattende Swagger UI-konfigurasjon
   - Aktivert sortering og filtrering
-  - Syntax highlighting
-  - Try-it-out funksjonalitet
-  - Response time display
+  - Syntaksutheving
+  - Try-it-out-funksjonalitet
+  - Visning av responstid
 
-### 3. Nye Unit Tester
+### 3. Nye enhetstester
 
 #### PersonServiceTest.java
 Omfattende tester for PersonService-klassen:
@@ -75,61 +74,61 @@ Omfattende tester for PersonService-klassen:
 - ✅ Korrekt parameter-kall til endpoint
 - ✅ Håndtering av store datamengder (1000+ elementer)
 
-**Total dekning**: 7 test-metoder
+**Total dekning**: 7 testmetoder
 
 #### PersonRegisterEndpointTest.java
 Omfattende tester for PersonRegisterEndpoint-klassen:
-- ✅ Returnering av kunder med valid ID
-- ✅ Parametriserte tester med ulike ID-verdier
-- ✅ Immutable list validering
-- ✅ Null-ID håndtering
-- ✅ Customer record funksjonalitet (equality, toString, etc.)
-- ✅ Konsistente resultater ved flere kall
-- ✅ SSN format validering
-- ✅ Håndtering av spesialtegn i navn
+- Returnering av kunder med gyldig ID
+- Parametriserte tester med ulike ID-verdier
+- Validering av uforanderlige lister
+- Null-ID-håndtering
+- Customer-record-funksjonalitet (likhet, toString, osv.)
+- Konsistente resultater ved flere kall
+- Validering av fødselsnummerformat
+- Håndtering av spesialtegn i navn
 
-**Total dekning**: 12 test-metoder
+**Total dekning**: 12 testmetoder
 
 #### PersonResourceTest.java
-Omfattende tester for PersonResource REST controller:
-- ✅ GET /api endpoint med status 200
-- ✅ JSON serialisering og deserialisering
-- ✅ Håndtering av tom liste
-- ✅ Håndtering av enkelt element
-- ✅ Håndtering av spesialtegn (æ, ø, å)
-- ✅ Person record funksjonalitet
-- ✅ Korrekt service-kall
-- ✅ Håndtering av store lister (100+ elementer)
-- ✅ Content-Type header validering
+Omfattende tester for PersonResource REST-kontroller:
+- GET /api-endepunkt med status 200
+- JSON-serialisering og -deserialisering
+- Håndtering av tom liste
+- Håndtering av enkelt element
+- Håndtering av spesialtegn (æ, ø, å)
+- Person-record-funksjonalitet
+- Korrekt tjenestekall
+- Håndtering av store lister (100+ elementer)
+- Validering av Content-Type-header
 
-**Total dekning**: 11 test-metoder
+**Total dekning**: 11 testmetoder
 
 #### IntegrasjonPersonApplicationTests.java
-Utvidet integrasjonstester:
-- ✅ Spring context loading
-- ✅ Bean konfigurasjonsvalidering
-- ✅ PersonService bean tilgjengelighet
-- ✅ PersonRegisterEndpoint bean tilgjengelighet
-- ✅ PersonResource bean tilgjengelighet
-- ✅ Spring Boot konfigurasjonsvalidering
-- ✅ Autowiring validering
+Utvidede integrasjonstester:
+- Lasting av Spring-kontekst
+- Validering av bean-konfigurasjon
+- PersonService-bean tilgjengelig
+- PersonRegisterEndpoint-bean tilgjengelig
+- PersonResource-bean tilgjengelig
+- Spring Boot-konfigurasjonsvalidering
+- Autowiring-validering
 
-**Total dekning**: 7 test-metoder
+**Total dekning**: 7 testmetoder
 
 ## Tekniske Detaljer
 
-### Java 25 Features i Bruk
-1. **Stream.toList()**: Direkte konvertering fra stream til immutable liste
+### Java 25-funksjoner i bruk
+1. **Stream.toList()**: Direkte konvertering fra stream til uforanderlig liste
 2. **List.getFirst()** og **List.getLast()**: Mer lesbar kode enn `get(0)` og `get(size()-1)`
 3. **Records**: Allerede i bruk for Customer og Person (introdusert i Java 14, fortsatt moderne)
-4. **Pattern Matching**: Klar for fremtidig bruk
+4. **Mønstermatching**: Klar for fremtidig bruk
 
-### Test Framework
-- **JUnit 5** (Jupiter): Moderne test-rammeverk
-- **Mockito**: For mocking av dependencies
-- **AssertJ**: Fluent assertions for bedre lesbarhet
-- **Spring MockMvc**: For REST controller testing
-- **Parametriserte tester**: For testing av multiple scenarioer
+### Testrammeverk
+- **JUnit 5** (Jupiter): Moderne testrammeverk
+- **Mockito**: For mocking av avhengigheter
+- **AssertJ**: Flytende påstander for bedre lesbarhet
+- **Spring MockMvc**: For testing av REST-kontrollere
+- **Parametriserte tester**: For testing av flere scenarioer
 
 ### Spring Boot 3.5.6
 - Oppdatert til nyeste versjon som støtter Java 25
@@ -145,30 +144,30 @@ mvn clean test
 ./mvnw clean test
 ```
 
-## Test Coverage
-- **PersonService**: 100% method coverage
-- **PersonRegisterEndpoint**: 100% method coverage
-- **PersonResource**: 100% controller coverage
-- **IntegrasjonPersonApplication**: Context og bean validation
+## Testdekning
+- **PersonService**: 100% metodedekning
+- **PersonRegisterEndpoint**: 100% metodedekning
+- **PersonResource**: 100% kontrollerdekning
+- **IntegrasjonPersonApplication**: Kontekst- og bean-validering
 
-## Beste Praksis Implementert
-1. ✅ **Test-drevet utvikling**: Alle klasser har dedikerte tester
-2. ✅ **Mocking**: Isolerte unit tester med Mockito
-3. ✅ **Parametriserte tester**: Effektiv testing av multiple scenarioer
-4. ✅ **DisplayName annotations**: Lesbare test-navn
-5. ✅ **Arrange-Act-Assert**: Klar test-struktur
-6. ✅ **Edge case testing**: Tomme lister, null-verdier, store datamengder
-7. ✅ **Integration testing**: Spring context validation
+## Beste praksis implementert
+1. **Testdrevet utvikling**: Alle klasser har dedikerte tester
+2. **Mocking**: Isolerte enhetstester med Mockito
+3. **Parametriserte tester**: Effektiv testing av flere scenarioer
+4. **DisplayName-annotasjoner**: Lesbare testnavn
+5. **Arrange-Act-Assert**: Klar teststruktur
+6. **Kanttilfelle-testing**: Tomme lister, null-verdier, store datamengder
+7. **Integrasjonstesting**: Spring-kontekstvalidering
 
-## Fremtidige Forbedringer
-- [ ] Legge til code coverage rapportering (JaCoCo)
-- [ ] Implementere mutation testing (PIT)
-- [ ] Legge til performance tester
-- [ ] Implementere contract testing for REST API
-- [ ] Legge til end-to-end tester
+## Fremtidige forbedringer
+- [ ] Legge til testdekningsrapportering (JaCoCo)
+- [ ] Implementere mutasjonstesting (PIT)
+- [ ] Legge til ytelsestester
+- [ ] Implementere kontrakttesting for REST API
+- [ ] Legge til ende-til-ende-tester
 
-## Dependencies
-Se `pom.xml` for fullstendig liste av dependencies.
+## Avhengigheter
+Se `pom.xml` for fullstendig liste over avhengigheter.
 
 Viktigste:
 - Spring Boot 3.5.6

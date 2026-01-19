@@ -173,21 +173,21 @@ Alle klasser i prosjektet har nå omfattende unit test dekning.
 
 ---
 
-## 📝 Recommendations for Future
+## Anbefalinger for fremtiden
 
 ### Umiddelbare forbedringer
-1. Legg til JaCoCo for faktisk coverage metrics
-2. Implementer continuous integration (GitHub Actions/Jenkins)
+1. Legg til JaCoCo for faktisk dekningsmålinger
+2. Implementer kontinuerlig integrasjon (GitHub Actions/Jenkins)
 
-### Medium-term
-3. Legg til mutation testing (PIT)
-4. Performance benchmarking (JMH)
-5. Contract testing for REST API
+### Mellomlang sikt
+3. Legg til mutasjonstesting (PIT)
+4. Ytelsesmåling (JMH)
+5. Kontrakttesting for REST API
 
-### Long-term
-6. End-to-end tests
-7. Load testing
-8. Security testing
+### Lang sikt
+6. Ende-til-ende-tester
+7. Lasttesting
+8. Sikkerhetstesting
 
 ---
 
