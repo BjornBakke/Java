@@ -54,12 +54,12 @@ public class OpenApiConfig {
                         ### ✨ Hovedfunksjoner
                         - 🔍 **Personsøk**: Avansert søk i personregister
                         - 📊 **Data Integration**: Seamless integrasjon med backend-systemer
-                        - 🚀 **High Performance**: Bygget med Java 25 og Spring Boot 3.5.6
+                        - 🚀 **High Performance**: Bygget med Java 25 og Spring Boot 4.0.0
                         - 🔒 **Type Safety**: Records og moderne Java features
                         
                         ### 🛠️ Teknisk Stack
                         - **Java**: 25 (Latest LTS features)
-                        - **Spring Boot**: 3.5.6
+                        - **Spring Boot**: 4.0.0
                         - **OpenAPI**: 3.0 (Latest specification)
                         - **Architecture**: RESTful, Layered Architecture
                         

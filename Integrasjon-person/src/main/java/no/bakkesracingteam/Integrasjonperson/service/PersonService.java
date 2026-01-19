@@ -1,6 +1,5 @@
 package no.bakkesracingteam.Integrasjonperson.service;
 
-import jakarta.annotation.Resource;
 import no.bakkesracingteam.Integrasjonperson.backend.PersonRegisterEndpoint;
 import no.bakkesracingteam.Integrasjonperson.rest.PersonResource;
 import org.springframework.stereotype.Service;
@@ -27,8 +26,11 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    @Resource
-    private PersonRegisterEndpoint PersonRegisterEndpoint;
+    private final PersonRegisterEndpoint personRegisterEndpoint;
+
+    public PersonService(PersonRegisterEndpoint personRegisterEndpoint) {
+        this.personRegisterEndpoint = personRegisterEndpoint;
+    }
 
     /**
      * Retrieves a list of persons from the backend system.
@@ -56,7 +58,7 @@ public class PersonService {
      * @throws NullPointerException if PersonRegisterEndpoint returns null (should not happen)
      */
     public List<PersonResource.Person> getPersoner(String id) {
-        return to(PersonRegisterEndpoint.getPerson(id));
+        return to(personRegisterEndpoint.getPerson(id));
     }
 
     /**

@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  * <ul>
  *   <li><strong>Java:</strong> 25 (Latest LTS features)</li>
- *   <li><strong>Spring Boot:</strong> 3.5.6</li>
+ *   <li><strong>Spring Boot:</strong> 4.0.0</li>
  *   <li><strong>OpenAPI:</strong> 3.0 with SpringDoc</li>
  *   <li><strong>Architecture:</strong> Layered (Controller → Service → Backend)</li>
  * </ul>
@@ -82,7 +82,7 @@ public class IntegrasjonPersonApplication {
      *
      * @param args Command line arguments (not used currently)
      */
-    static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(IntegrasjonPersonApplication.class, args);
 
         System.out.println("""
@@ -100,7 +100,7 @@ public class IntegrasjonPersonApplication {
             ║   🏥 Health Check:                                          ║
             ║   → http://localhost:8080/actuator/health                   ║
             ║                                                              ║
-            ║   ✨ Built with Java 25 & Spring Boot 3.5.6                ║
+            ║   ✨ Built with Java 25 & Spring Boot 4.0.0                ║
             ║                                                              ║
             ╚══════════════════════════════════════════════════════════════╝
             """);
